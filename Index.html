@@ -10,6 +10,7 @@
   peixe=cachorro*gato
   nome="rodrigo"
   //alert("Feliz 2021!")
+  personagemescolhido="ninguem"
 
   function pesquisar() {
     console.log("Executando Pesquisar")
@@ -22,12 +23,31 @@
     return texto
   }
 function processaritem(personagem) {
-console.log(personagem.birth_year)
+  console.log(personagem.birth_year)
+
+  if(personagem.name=="Luke Skywalker"){
+    personagemescolhido=personagem
+  }
 }
+
+function acholuke(personagem){
+  if(personagem.name=="Luke Skywalker"){
+    return true
+  } 
+  return false
+}
+
+acholuke2 = (personagem) => personagem.name=="Luke Skywalker"
+
+
+
 async function pegarDados (){
   resposta=await fetch("https://swapi.dev/api/people/")
   dict=await resposta.json()
   dict.results.forEach( processaritem )
+  luke=dict.results.find(acholuke)
+  chars=dict.results.filter((personagem) => parseInt( personagem.height)>=170)
+  //personagemescolhido
   // dict.results.forEach( function(item) { return processaritem(item) } )
 }
 
