@@ -4,11 +4,30 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css"/>
 
+<script>
+  cachorro=100
+  gato=25
+  peixe=cachorro*gato
+  nome="rodrigo"
+  alert("Feliz 2021!")
+
+  function pesquisar() {
+    console.log("Executando Pesquisar")
+    valor=document.getElementById("campopesquisa").value
+    alert(valor)
+  }
+
+  function comprimentar(nome,sobrenome) {
+    texto="bom dia,    "+ nome + " " + sobrenome
+    return texto
+  }
+
+</script>
 
 <div class="container-fluid">
 <head>
   <div >
-    <img src="images\logo_Humanus.jpg" alt="some text" width=220 height=120 opacity: 0.6;>
+    <img id="ljhkjh" src="images\logo_Humanus.jpg" alt="some text" width=220 height=120 opacity: 0.6;>
   </div>
 </head>
 <body>
@@ -44,8 +63,8 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            <input id="campopesquisa" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" onclick="pesquisar()" >Pesquisar</button>
           </form>
         </div>
       </nav>
