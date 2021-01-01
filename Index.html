@@ -9,7 +9,7 @@
   gato=25
   peixe=cachorro*gato
   nome="rodrigo"
-  alert("Feliz 2021!")
+  //alert("Feliz 2021!")
 
   function pesquisar() {
     console.log("Executando Pesquisar")
@@ -21,6 +21,17 @@
     texto="bom dia,    "+ nome + " " + sobrenome
     return texto
   }
+function processaritem(personagem) {
+console.log(personagem.birth_year)
+}
+async function pegarDados (){
+  resposta=await fetch("https://swapi.dev/api/people/")
+  dict=await resposta.json()
+  dict.results.forEach( processaritem )
+  // dict.results.forEach( function(item) { return processaritem(item) } )
+}
+
+pegarDados()
 
 </script>
 
